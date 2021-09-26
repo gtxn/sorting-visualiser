@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorter Buddy</title>
+    <link rel="icon"
+        href="http://cdn.shopify.com/s/files/1/1061/1924/products/Robot_Emoji_Icon_abe1111a-1293-4668-bdf9-9ceb05cff58e_grande.png?v=1571606090"
+        type="image">
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="./styles/fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="p-2 text-center bg-light">
+            <h1 class="mb-3">Sorter Buddy 🤖</h1>
+            <p>See your favourite algorithms come to life! 👀</p>
+        </div>
+    </header>
+    <div class="container" width='100%' style='max-width: 800px; max-height:700px'>
+        <div class="controlBox">
+            <h3 id='controlCenter'>Control Center 🎛</h3>
+            <div class="topControlWrapper">
+                <div class="topControl">
+                    <select id='sortSelect' class="form-select" aria-label="Default select example">
+                        <option selected value="1">Bubble Sort</option>
+                        <option value="2">Quick Sort</option>
+                        <option value="3">Merge Sort</option>
+                        <option value="4">Insertion Sort</option>
+                    </select>
+                </div>
+                <div class="topControl">
+                    <select id='numElems' class="form-select" aria-label="Default select example">
+                        <option>Array size</option>
+                        <option value="5">5</option>
+                        <option selected value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+                <div class="topControl">
+                    <div class="sliderContainer">
+                        <label for="speedRange" class="sliderText">Speed</label>
+                        <input type="range" class="slider" min="1" max="6" step="0.5" id="speedRange" value='1'>
+                    </div>
+                </div>
+
+                <div class="topControl">
+                    <button class="subBtn" onclick='sortArr()'>Sort</button>
+                    <button class='subBtn' onclick="reset()">Preview</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="center">
+            <div class="wrapper" id='display'>
+            </div>
+            <div class="control">
+                <button onclick='slowDown()' class='speedBtn' type='button'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-skip-backward" viewBox="0 0 16 16">
+                        <path
+                            d="M.5 3.5A.5.5 0 0 1 1 4v3.248l6.267-3.636c.52-.302 1.233.043 1.233.696v2.94l6.267-3.636c.52-.302 1.233.043 1.233.696v7.384c0 .653-.713.998-1.233.696L8.5 8.752v2.94c0 .653-.713.998-1.233.696L1 8.752V12a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm7 1.133L1.696 8 7.5 11.367V4.633zm7.5 0L9.196 8 15 11.367V4.633z" />
+                    </svg>
+                </button>
+                <button onclick='speedUp()' class='speedBtn' type='button'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-skip-forward" viewBox="0 0 16 16">
+                        <path
+                            d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.752l-6.267 3.636c-.52.302-1.233-.043-1.233-.696v-2.94l-6.267 3.636C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696L7.5 7.248v-2.94c0-.653.713-.998 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5zM1 4.633v6.734L6.804 8 1 4.633zm7.5 0v6.734L14.304 8 8.5 4.633z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <footer id='footer' class='bg-light'>
+        <div class="footWrapper">
+            <a role='button' href="https://www.linkedin.com/in/glenda-txn/"
+                class='btn btn-outline-light btn-floating m-1 rounded-circle'>
+                <i class="fa-2x fab fa-linkedin"></i>
+            </a>
+
+
+            <a role='button' href="https://github.com/gtxn"
+                class='btn btn-outline-light btn-floating m-1 rounded-circle'>
+                <i class="fa-2x fab fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+        </script>
+
+    <script src="scripts/helper.js"></script>
+    <script src="scripts/sorts.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
