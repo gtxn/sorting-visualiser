@@ -10,24 +10,16 @@ let sortArr = async () => {
 
     document.getElementById('sortBtn').disabled = true
     document.getElementById('previewBtn').disabled = true
+    document.getElementById('speedRange').disabled = true
 
+    let sortAlgoArr = [bubbleSort, quickSort, mergeSort, insertionSort]
+    await sortAlgoArr[sortInd](arr)
 
-    if (sortInd == 1) {
-        await bubbleSort(arr)
-    }
-    else if (sortInd == 2) {
-        await quickSort(arr, 0, arr.length)
-    }
-    else if (sortInd == 3) {
-        await mergeSort(arr, 0, arr.length - 1)
-    }
-    else if (sortInd == 4) {
-        await insertionSort(arr)
-    }
     await endPose(arr)
 
     document.getElementById('sortBtn').disabled = false
     document.getElementById('previewBtn').disabled = false
+    document.getElementById('speedRange').disabled = false
 }
 
 let slowDown = () => {

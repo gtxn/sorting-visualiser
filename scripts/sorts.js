@@ -79,15 +79,20 @@ let split = async (a, left, right) => {
 }
 
 
-let quickSort = async (arr, low, high) => {
+let quickSortHelper = async (arr, low, high) => {
     if (low < high) {
         let pos = await split(arr, low, high)
-        await quickSort(arr, low, pos - 1)
-        await quickSort(arr, pos, high)
+        await quickSortHelper(arr, low, pos - 1)
+        await quickSortHelper(arr, pos, high)
     }
     renderArr(arr)
+    console.log(arr)
 
     return arr
+}
+
+let quickSort = async (arr) => {
+    await quickSortHelper(arr, 0, arr.length - 1)
 }
 
 // Merge sort 
@@ -137,13 +142,17 @@ let merge = async (arr, low, mid, high) => {
     return arr
 }
 
-let mergeSort = async (arr, low, high) => {
+let mergeSortHelper = async (arr, low, high) => {
     if (low < high) {
         let mid = Math.floor((low + high) / 2)
-        await mergeSort(arr, low, mid)
-        await mergeSort(arr, mid + 1, high)
+        await mergeSortHelper(arr, low, mid)
+        await mergeSortHelper(arr, mid + 1, high)
         await merge(arr, low, mid, high)
     }
+}
+
+let mergeSort = async (arr) => {
+    await mergeSortHelper(arr, 0, arr.length - 1)
 }
 
 // Insertion sort
