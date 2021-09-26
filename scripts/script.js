@@ -9,6 +9,8 @@ let sortArr = async () => {
     time = 100 / speed
 
     document.getElementById('sortBtn').disabled = true
+    document.getElementById('previewBtn').disabled = true
+
 
     if (sortInd == 1) {
         await bubbleSort(arr)
@@ -25,6 +27,7 @@ let sortArr = async () => {
     await endPose(arr)
 
     document.getElementById('sortBtn').disabled = false
+    document.getElementById('previewBtn').disabled = false
 }
 
 let slowDown = () => {
